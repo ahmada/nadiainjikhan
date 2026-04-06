@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const fontUrl = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap";
+
+const versions = [
+  {
+    id: 'v1',
+    name: 'Alchemy',
+    desc: 'Dark luxury. Tiled 8-pointed star pattern in gold on near-black. Cinzel serif. Cinematic and theatrical.',
+    palette: ['#0A0907', '#C9A547', '#DDD5C5', '#2A2318'],
+  },
+  {
+    id: 'v2',
+    name: 'Andalus',
+    desc: 'Deep cobalt hero with diamond tile pattern. Josefin Sans geometric type. Architectural and precise.',
+    palette: ['#0D2137', '#0099A8', '#F4F1EC', '#C9A547'],
+  },
+  {
+    id: 'v3',
+    name: 'Manuscript',
+    desc: 'Warm parchment with arabesque interlocking circles. Cormorant Garamond throughout. Scholarly and intimate.',
+    palette: ['#FAF0E2', '#7A2E0C', '#C4872A', '#4A3020'],
+  },
+  {
+    id: 'v4',
+    name: 'Minaret',
+    desc: 'Clean white ground with deep emerald and a large geometric star ornament. DM Serif. Sharp and editorial.',
+    palette: ['#FFFFFF', '#1A3D2B', '#C4862B', '#F7FBF8'],
+  },
+];
+---
+
+<BaseLayout fontUrl={fontUrl} title="Nadia Inji Khan — Choose a Design">
+  <main>
+    <div class="header">
+      <p class="eyebrow">Design Preview</p>
+      <h1>Nadia Inji Khan</h1>
+      <p class="sub">Four visual directions for your academic site. Each links to a full preview.</p>
+    </div>
+
+    <div class="grid">
+      {versions.map(({ id, name, desc, palette }) => (
+        <a href={`/${id}`} class="card">
+          <div class="card-palette">
+            {palette.map(c => <span class="swatch" style={`background:${c}`}></span>)}
+          </div>
+          <div class="card-body">
+            <div class="card-num">{id.toUpperCase()}</div>
+            <h2>{name}</h2>
+            <p>{desc}</p>
+          </div>
+          <div class="card-cta">View Design →</div>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0E0E0E;
+    color: #EEEEEE;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex; align-items: center;
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 80px 28px; width: 100%; }
+
+  .header { margin-bottom: 60px; }
+  .eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #666; margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 400; margin-bottom: 0.8rem;
+  }
+  .sub { color: #888; font-size: 0.9rem; max-width: 420px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .card {
+    display: flex; flex-direction: column;
+    background: #161616; border: 1px solid #222;
+    padding: 0; text-decoration: none; color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .card:hover { border-color: #555; background: #1C1C1C; }
+
+  .card-palette {
+    display: flex; height: 6px;
+  }
+  .swatch { flex: 1; }
+
+  .card-body { padding: 28px 28px 20px; flex: 1; }
+  .card-num {
+    font-size: 0.62rem; letter-spacing: 0.2em; color: #555;
+    margin-bottom: 10px;
+  }
+  .card-body h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem; font-weight: 400; margin-bottom: 10px; color: #EEEEEE;
+  }
+  .card-body p { font-size: 0.85rem; color: #888; line-height: 1.6; }
+
+  .card-cta {
+    padding: 16px 28px;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+    color: #555; border-top: 1px solid #222;
+    transition: color 0.2s;
+  }
+  .card:hover .card-cta { color: #EEEEEE; }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>

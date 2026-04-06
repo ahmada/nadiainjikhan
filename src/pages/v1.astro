@@ -1,0 +1,364 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const fontUrl = "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Raleway:ital,wght@0,300;0,400;0,500;1,300&display=swap";
+---
+
+<BaseLayout fontUrl={fontUrl} title="Nadia Inji Khan — Alchemy">
+  <!-- Version Switcher -->
+  <div class="vswitcher">
+    <a href="/v1" class="active">I</a>
+    <a href="/v2">II</a>
+    <a href="/v3">III</a>
+    <a href="/v4">IV</a>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <span class="nav-name">Nadia Inji Khan</span>
+      <ul>
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero / Bio -->
+  <section id="bio" class="hero">
+    <!-- Islamic star tile pattern overlay -->
+    <div class="pattern-layer" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="star8" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <polygon points="50,5 56.9,33.4 81.8,18.2 66.6,43.1 95,50 66.6,56.9 81.8,81.8 56.9,66.6 50,95 43.1,66.6 18.2,81.8 33.4,56.9 5,50 33.4,43.1 18.2,18.2 43.1,33.4"
+              fill="none" stroke="#C9A547" stroke-width="0.6"/>
+            <circle cx="50" cy="50" r="3" fill="none" stroke="#C9A547" stroke-width="0.4"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#star8)" opacity="0.12"/>
+      </svg>
+    </div>
+
+    <div class="container hero-content">
+      <p class="eyebrow">Arabic &amp; Islamic Studies</p>
+      <h1>Nadia Inji Khan</h1>
+      <p class="hero-sub">PhD &ensp;·&ensp; University of Chicago</p>
+      <div class="gold-rule"></div>
+      <p class="bio-text">
+        I am a scholar of Arabic and Islamic intellectual history, with a focus on the
+        transmission of knowledge across the medieval Mediterranean. My work examines how
+        manuscript traditions, translation practices, and scholarly networks shaped the
+        formation of Islamic philosophy and theology between the ninth and thirteenth centuries.
+      </p>
+      <p class="bio-text">
+        My dissertation, <em>"Circuits of the Pen: Scribal Communities and the Geography
+        of Islamic Learning, 900–1200,"</em> reconstructs the social and material conditions
+        of book culture in the pre-modern Islamic world. I am currently revising the
+        manuscript for publication.
+      </p>
+      <p class="bio-text">
+        Before Chicago, I completed my BA at [Undergraduate Institution]. My research has
+        been supported by fellowships from [Funding Body] and [Funding Body].
+      </p>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="container">
+      <p class="section-label">Curriculum Vitae</p>
+      <a href="/cv-nadia-inji-khan.pdf" download class="btn-gold">Download CV (PDF) ↓</a>
+
+      <div class="cv-block">
+        <h3>Education</h3>
+        <table>
+          <tr><td class="yr">2024</td><td><strong>PhD, Near Eastern Languages &amp; Civilizations</strong><br/><span class="dim">University of Chicago</span></td></tr>
+          <tr><td class="yr">2019</td><td><strong>MA, Near Eastern Languages &amp; Civilizations</strong><br/><span class="dim">University of Chicago</span></td></tr>
+          <tr><td class="yr">2017</td><td><strong>BA, [Department]</strong><br/><span class="dim">[Undergraduate Institution]</span></td></tr>
+        </table>
+      </div>
+
+      <div class="cv-block">
+        <h3>Positions</h3>
+        <table>
+          <tr><td class="yr">2024–</td><td><strong>[Current Position]</strong><br/><span class="dim">[Institution]</span></td></tr>
+          <tr><td class="yr">2022–24</td><td><strong>[Fellowship / Postdoc]</strong><br/><span class="dim">[Institution]</span></td></tr>
+          <tr><td class="yr">2019–22</td><td><strong>Teaching Assistant &amp; Instructor</strong><br/><span class="dim">University of Chicago</span></td></tr>
+        </table>
+      </div>
+
+      <div class="cv-block">
+        <h3>Awards &amp; Fellowships</h3>
+        <table>
+          <tr><td class="yr">2023</td><td><strong>[Fellowship Name]</strong><br/><span class="dim">[Granting Body]</span></td></tr>
+          <tr><td class="yr">2021</td><td><strong>[Fellowship Name]</strong><br/><span class="dim">[Granting Body]</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+      <p class="section-label">Publications</p>
+
+      <div class="pub-year-group">
+        <div class="pub-year-label">2024</div>
+        <ol>
+          <li class="pub">
+            <span class="pub-type">Article</span>
+            <div>Khan, Nadia Inji. <em>"[Article Title: Knowledge Networks in the Medieval Islamic World]."</em> <span class="dim">Journal of Arabic and Islamic Studies</span>, vol. 24, no. 2, 2024. <a href="#">DOI ↗</a></div>
+          </li>
+          <li class="pub">
+            <span class="pub-type">Article</span>
+            <div>Khan, Nadia Inji. <em>"[Second Article Title: Scribal Practice and Textual Authority]."</em> <span class="dim">Islamic Law and Society</span>, vol. 31, no. 1, 2024. <a href="#">DOI ↗</a></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year-label">2023</div>
+        <ol>
+          <li class="pub">
+            <span class="pub-type">Chapter</span>
+            <div>Khan, Nadia Inji. <em>"[Chapter Title]."</em> <span class="dim">In [Edited Volume], edited by [Editor]. [Publisher], 2023.</span></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year-label">2021</div>
+        <ol>
+          <li class="pub">
+            <span class="pub-type">Review</span>
+            <div>Khan, Nadia Inji. <em>"[Review of Book Title by Author Name]."</em> <span class="dim">Middle East Journal</span>, vol. 75, no. 3, 2021. <a href="#">DOI ↗</a></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2>Get in Touch</h2>
+      <p class="contact-sub dim">For research inquiries, media requests, or general correspondence.</p>
+
+      <form id="cf" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+        <input type="hidden" name="subject" value="Website inquiry — Nadia Inji Khan" />
+        <input type="hidden" name="redirect" value="false" />
+        <input type="checkbox" name="botcheck" style="display:none" />
+
+        <div class="fg"><label>Name</label><input type="text" name="name" required /></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" required /></div>
+        <div class="fg"><label>Message</label><textarea name="message" required></textarea></div>
+        <div class="fa">
+          <button type="submit" class="btn-gold" id="sb">Send Message</button>
+          <span id="fs" class="fs" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <footer>
+        <p class="dim">&copy; {new Date().getFullYear()} Nadia Inji Khan</p>
+      </footer>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('cf') as HTMLFormElement;
+  const btn = document.getElementById('sb') as HTMLButtonElement;
+  const status = document.getElementById('fs') as HTMLSpanElement;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const data = await (await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })).json();
+      if (data.success) { form.reset(); status.textContent = 'Sent. Thank you.'; status.className = 'fs ok'; }
+      else throw new Error();
+    } catch { status.textContent = 'Something went wrong.'; status.className = 'fs err'; }
+    finally { btn.disabled = false; btn.textContent = 'Send Message'; }
+  });
+</script>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    background: #0A0907;
+    color: #DDD5C5;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Version Switcher ── */
+  .vswitcher {
+    position: fixed; top: 20px; right: 24px; z-index: 200;
+    display: flex; gap: 6px; align-items: center;
+    background: rgba(10,9,7,0.85); border: 1px solid #3A3020;
+    padding: 6px 12px; backdrop-filter: blur(8px);
+  }
+  .vswitcher a {
+    color: #7A6F5A; font-family: 'Cinzel', serif; font-size: 11px;
+    text-decoration: none; padding: 2px 6px; transition: color 0.2s;
+  }
+  .vswitcher a:hover, .vswitcher a.active { color: #C9A547; }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 64px; background: rgba(10,9,7,0.92); border-bottom: 1px solid #2A2318;
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+  .nav-name { font-family: 'Cinzel', serif; font-size: 1rem; color: #C9A547; letter-spacing: 0.08em; }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #7A6F5A; text-decoration: none; transition: color 0.2s; }
+  nav ul a:hover { color: #C9A547; }
+
+  /* ── Container ── */
+  .container { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center;
+    padding-top: 64px;
+    border-bottom: 1px solid #2A2318;
+  }
+  .pattern-layer {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .hero-content { position: relative; z-index: 1; padding: 80px 28px; }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #C9A547; margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 400; color: #F0E8D8;
+    letter-spacing: 0.04em; line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .hero-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #7A6F5A;
+    margin-bottom: 2.5rem;
+  }
+  .gold-rule { width: 60px; height: 1px; background: #C9A547; margin-bottom: 2.5rem; }
+  .bio-text { max-width: 580px; margin-bottom: 1rem; color: #B8B0A0; font-weight: 300; }
+  .bio-text em { font-style: italic; color: #C9A547; }
+
+  /* ── Sections ── */
+  section:not(.hero) {
+    padding: 80px 0;
+    border-bottom: 1px solid #1E1A12;
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #C9A547; margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400; color: #F0E8D8;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #7A6F5A; margin-bottom: 1.2rem;
+  }
+
+  .dim { color: #5A5245; }
+
+  /* ── Download Button ── */
+  .btn-gold {
+    display: inline-block; font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 10px 24px;
+    border: 1px solid #C9A547; color: #C9A547;
+    background: transparent; cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 3rem;
+  }
+  .btn-gold:hover { background: #C9A547; color: #0A0907; }
+
+  /* ── CV Tables ── */
+  .cv-block { margin-bottom: 3rem; }
+  table { width: 100%; border-collapse: collapse; }
+  tr { border-top: 1px solid #1E1A12; }
+  td { padding: 14px 0; vertical-align: top; font-size: 0.9rem; }
+  td.yr { width: 90px; color: #5A5245; font-size: 0.8rem; padding-top: 16px; }
+  td strong { display: block; color: #DDD5C5; font-weight: 500; }
+  td span.dim { font-size: 0.85rem; }
+
+  /* ── Publications ── */
+  .pub-year-group { margin-bottom: 2.5rem; }
+  .pub-year-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #C9A547; margin-bottom: 1rem;
+  }
+  ol { list-style: none; }
+  .pub {
+    display: grid; grid-template-columns: 68px 1fr;
+    gap: 0 12px; padding: 14px 0;
+    border-top: 1px solid #1E1A12;
+    font-size: 0.9rem; line-height: 1.6;
+  }
+  .pub-type {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #C9A547; padding-top: 3px;
+  }
+  .pub em { font-style: italic; color: #C9A547; }
+  .pub a { color: #7A6F5A; text-decoration: none; font-size: 0.8rem; }
+  .pub a:hover { color: #C9A547; }
+
+  /* ── Contact ── */
+  .contact-sub { margin-bottom: 2.5rem; font-size: 0.9rem; }
+
+  label { display: block; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #5A5245; margin-bottom: 8px; }
+
+  .fg { margin-bottom: 1.8rem; }
+  input, textarea {
+    width: 100%; background: transparent;
+    border: none; border-bottom: 1px solid #2A2318;
+    padding: 8px 0; font-family: 'Raleway', sans-serif;
+    font-size: 0.95rem; color: #DDD5C5;
+    outline: none; transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus { border-bottom-color: #C9A547; }
+  textarea { resize: vertical; min-height: 120px; }
+
+  .fa { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .fs { font-size: 0.85rem; }
+  .fs.ok { color: #7A9A7A; }
+  .fs.err { color: #9A5A5A; }
+
+  footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #1E1A12; }
+  footer p { font-size: 0.8rem; }
+
+  @media (max-width: 600px) {
+    .pub { grid-template-columns: 1fr; }
+    .pub-type { margin-bottom: 4px; }
+    nav ul { gap: 1.2rem; }
+    nav ul a { font-size: 0.72rem; }
+  }
+</style>

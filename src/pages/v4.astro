@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const fontUrl = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap";
+---
+
+<BaseLayout fontUrl={fontUrl} title="Nadia Inji Khan — Minaret">
+  <!-- Version Switcher -->
+  <div class="vswitcher">
+    <a href="/v1">I</a>
+    <a href="/v2">II</a>
+    <a href="/v3">III</a>
+    <a href="/v4" class="active">IV</a>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <span class="nav-name">Nadia Inji Khan</span>
+      <ul>
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero / Bio -->
+  <section id="bio" class="hero">
+    <!-- Large wireframe 8-pointed star ornament centered behind content -->
+    <div class="star-bg" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="star-svg">
+        <!-- Outer 8-pointed star -->
+        <polygon
+          points="200,20 227.6,133.6 327.3,145.4 266.4,226.4 327.3,307.4 227.6,319.2 200,432.8 172.4,319.2 72.7,307.4 133.6,226.4 72.7,145.4 172.4,133.6"
+          fill="none" stroke="#1A3D2B" stroke-width="1.5" opacity="0.25"/>
+        <!-- Middle ring -->
+        <polygon
+          points="200,60 220.8,151.2 297.3,163.6 252.8,226.4 297.3,289.2 220.8,301.6 200,392.8 179.2,301.6 102.7,289.2 147.2,226.4 102.7,163.6 179.2,151.2"
+          fill="none" stroke="#C4862B" stroke-width="0.8" opacity="0.2"/>
+        <!-- Inner 8-pointed star -->
+        <polygon
+          points="200,100 213.8,166.8 267.3,180.6 239.2,226.4 267.3,272.2 213.8,286 200,352.8 186.2,286 132.7,272.2 160.8,226.4 132.7,180.6 186.2,166.8"
+          fill="none" stroke="#1A3D2B" stroke-width="0.6" opacity="0.2"/>
+        <!-- Center octagon -->
+        <polygon
+          points="200,170 223,177 230,200 223,223 200,230 177,223 170,200 177,177"
+          fill="none" stroke="#C4862B" stroke-width="0.8" opacity="0.3"/>
+        <!-- Radiating lines -->
+        <line x1="200" y1="0" x2="200" y2="430" stroke="#1A3D2B" stroke-width="0.4" opacity="0.1"/>
+        <line x1="0" y1="200" x2="430" y2="200" stroke="#1A3D2B" stroke-width="0.4" opacity="0.1"/>
+        <line x1="0" y1="0" x2="430" y2="430" stroke="#1A3D2B" stroke-width="0.4" opacity="0.1"/>
+        <line x1="430" y1="0" x2="0" y2="430" stroke="#1A3D2B" stroke-width="0.4" opacity="0.1"/>
+      </svg>
+    </div>
+
+    <div class="container hero-content">
+      <p class="eyebrow">Arabic &amp; Islamic Studies</p>
+      <h1>Nadia Inji Khan</h1>
+      <div class="hero-meta">
+        <span class="hero-pill">PhD</span>
+        <span class="hero-pill">University of Chicago</span>
+        <span class="hero-pill">[Department]</span>
+      </div>
+      <div class="green-rule"></div>
+
+      <div class="bio-cols">
+        <p class="bio-text">
+          I am a scholar of Arabic and Islamic intellectual history, with a focus on the
+          transmission of knowledge across the medieval Mediterranean. My work examines how
+          manuscript traditions, translation practices, and scholarly networks shaped the
+          formation of Islamic philosophy and theology between the ninth and thirteenth centuries.
+        </p>
+        <p class="bio-text">
+          My dissertation, <em>"Circuits of the Pen: Scribal Communities and the Geography
+          of Islamic Learning, 900–1200,"</em> reconstructs the social and material conditions
+          of book culture in the pre-modern Islamic world. I am currently revising the
+          manuscript for publication.
+        </p>
+        <p class="bio-text">
+          Before Chicago, I completed my BA at [Undergraduate Institution]. My research has
+          been supported by fellowships from [Funding Body] and [Funding Body].
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="container">
+      <p class="section-label">Curriculum Vitae</p>
+      <a href="/cv-nadia-inji-khan.pdf" download class="btn-green">Download CV (PDF) ↓</a>
+
+      <div class="cv-grid">
+        <div class="cv-block">
+          <h3>Education</h3>
+          <div class="cv-item"><span class="yr">2024</span><div><strong>PhD, Near Eastern Languages &amp; Civilizations</strong><em>University of Chicago</em></div></div>
+          <div class="cv-item"><span class="yr">2019</span><div><strong>MA, Near Eastern Languages &amp; Civilizations</strong><em>University of Chicago</em></div></div>
+          <div class="cv-item"><span class="yr">2017</span><div><strong>BA, [Department]</strong><em>[Undergraduate Institution]</em></div></div>
+        </div>
+
+        <div class="cv-block">
+          <h3>Positions</h3>
+          <div class="cv-item"><span class="yr">2024–</span><div><strong>[Current Position]</strong><em>[Institution]</em></div></div>
+          <div class="cv-item"><span class="yr">2022–24</span><div><strong>[Fellowship / Postdoc]</strong><em>[Institution]</em></div></div>
+          <div class="cv-item"><span class="yr">2019–22</span><div><strong>Teaching Assistant &amp; Instructor</strong><em>University of Chicago</em></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+      <p class="section-label">Publications</p>
+
+      <div class="pub-block">
+        <div class="pub-year">2024</div>
+        <div class="pub-list">
+          <div class="pub"><span class="pub-type">Article</span><p>Khan, Nadia Inji. <em>"[Article Title: Knowledge Networks in the Medieval Islamic World]."</em> <span class="dim">Journal of Arabic and Islamic Studies</span>, vol. 24, no. 2. <a href="#">DOI ↗</a></p></div>
+          <div class="pub"><span class="pub-type">Article</span><p>Khan, Nadia Inji. <em>"[Second Article Title: Scribal Practice and Textual Authority]."</em> <span class="dim">Islamic Law and Society</span>, vol. 31, no. 1. <a href="#">DOI ↗</a></p></div>
+        </div>
+      </div>
+
+      <div class="pub-block">
+        <div class="pub-year">2023</div>
+        <div class="pub-list">
+          <div class="pub"><span class="pub-type">Chapter</span><p>Khan, Nadia Inji. <em>"[Chapter Title]."</em> <span class="dim">In [Edited Volume], edited by [Editor]. [Publisher], 2023.</span></p></div>
+        </div>
+      </div>
+
+      <div class="pub-block">
+        <div class="pub-year">2021</div>
+        <div class="pub-list">
+          <div class="pub"><span class="pub-type">Review</span><p>Khan, Nadia Inji. <em>"[Review of Book Title by Author Name]."</em> <span class="dim">Middle East Journal</span>, vol. 75, no. 3. <a href="#">DOI ↗</a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2>Get in Touch</h2>
+      <p class="contact-sub dim">For research inquiries, media requests, or general correspondence.</p>
+
+      <form id="cf" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+        <input type="hidden" name="subject" value="Website inquiry — Nadia Inji Khan" />
+        <input type="hidden" name="redirect" value="false" />
+        <input type="checkbox" name="botcheck" style="display:none" />
+        <div class="fg"><label>Name</label><input type="text" name="name" required /></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" required /></div>
+        <div class="fg"><label>Message</label><textarea name="message" required></textarea></div>
+        <div class="fa">
+          <button type="submit" class="btn-green" id="sb">Send Message</button>
+          <span id="fs" class="fs" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <footer>
+        <p class="dim">&copy; {new Date().getFullYear()} Nadia Inji Khan</p>
+      </footer>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('cf') as HTMLFormElement;
+  const btn = document.getElementById('sb') as HTMLButtonElement;
+  const status = document.getElementById('fs') as HTMLSpanElement;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const data = await (await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })).json();
+      if (data.success) { form.reset(); status.textContent = 'Sent. Thank you.'; status.className = 'fs ok'; }
+      else throw new Error();
+    } catch { status.textContent = 'Something went wrong.'; status.className = 'fs err'; }
+    finally { btn.disabled = false; btn.textContent = 'Send Message'; }
+  });
+</script>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    background: #FFFFFF;
+    color: #111111;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Version Switcher ── */
+  .vswitcher {
+    position: fixed; top: 20px; right: 24px; z-index: 200;
+    display: flex; gap: 6px;
+    background: rgba(255,255,255,0.95); border: 1px solid #E0E0E0;
+    padding: 6px 12px; backdrop-filter: blur(8px);
+  }
+  .vswitcher a {
+    color: #AAAAAA; font-family: 'DM Sans', sans-serif; font-size: 11px;
+    font-weight: 500; letter-spacing: 0.08em;
+    text-decoration: none; padding: 2px 6px;
+  }
+  .vswitcher a:hover, .vswitcher a.active { color: #1A3D2B; }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 64px; background: #FFFFFF; border-bottom: 1px solid #EBEBEB;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #111111; }
+  nav ul { list-style: none; display: flex; gap: 2.2rem; }
+  nav ul a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.04em; color: #888888; text-decoration: none; transition: color 0.2s; }
+  nav ul a:hover { color: #1A3D2B; }
+
+  /* ── Container ── */
+  .container { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative; min-height: 100vh;
+    padding-top: 64px; display: flex; align-items: center;
+    background: #F7FBF8;
+    border-bottom: 1px solid #E0EBE5;
+    overflow: hidden;
+  }
+  .star-bg {
+    position: absolute;
+    right: -60px; top: 50%;
+    transform: translateY(-50%);
+    width: 520px; height: 520px;
+    pointer-events: none;
+  }
+  .star-svg { width: 100%; height: 100%; }
+
+  .hero-content { position: relative; z-index: 1; padding: 80px 28px; width: 100%; }
+
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #1A3D2B; margin-bottom: 1rem; font-weight: 500;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400; color: #111111;
+    line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem;
+  }
+  .hero-pill {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+    padding: 4px 12px; border: 1px solid #1A3D2B; color: #1A3D2B;
+    text-transform: uppercase;
+  }
+  .green-rule { width: 48px; height: 2px; background: #1A3D2B; margin-bottom: 2.5rem; }
+
+  .bio-cols { max-width: 560px; }
+  .bio-text { margin-bottom: 1rem; color: #444444; }
+  .bio-text em { font-style: italic; color: #1A3D2B; font-family: 'DM Serif Display', serif; }
+
+  /* ── Sections ── */
+  section:not(.hero) { padding: 80px 0; border-bottom: 1px solid #EBEBEB; }
+
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #AAAAAA; margin-bottom: 2rem; font-weight: 500;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400; color: #111111; margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #1A3D2B; margin-bottom: 1.2rem; font-weight: 500;
+  }
+  .dim { color: #AAAAAA; }
+
+  /* ── Button ── */
+  .btn-green {
+    display: inline-block;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
+    padding: 11px 26px; background: #1A3D2B; color: #FFFFFF;
+    border: none; cursor: pointer; text-decoration: none;
+    transition: background 0.2s; margin-bottom: 3rem;
+  }
+  .btn-green:hover { background: #122B1E; }
+
+  /* ── CV ── */
+  .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .cv-block { margin-bottom: 0; }
+  .cv-item { display: grid; grid-template-columns: 68px 1fr; gap: 0 12px; padding: 12px 0; border-top: 1px solid #EBEBEB; }
+  .yr { font-size: 0.75rem; color: #AAAAAA; padding-top: 2px; }
+  .cv-item strong { display: block; font-family: 'DM Serif Display', serif; font-size: 0.95rem; font-weight: 400; color: #111111; margin-bottom: 2px; }
+  .cv-item em { font-size: 0.82rem; color: #888888; font-style: normal; }
+
+  /* ── Publications ── */
+  .pub-block { display: grid; grid-template-columns: 60px 1fr; gap: 0 24px; margin-bottom: 0; }
+  .pub-year {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem; color: #1A3D2B; padding-top: 16px;
+    writing-mode: vertical-lr; text-orientation: mixed;
+    transform: rotate(180deg);
+    align-self: start;
+  }
+  .pub-list { border-top: 1px solid #EBEBEB; }
+  .pub {
+    display: grid; grid-template-columns: 72px 1fr; gap: 0 12px;
+    padding: 16px 0; border-bottom: 1px solid #EBEBEB; font-size: 0.9rem;
+  }
+  .pub-type {
+    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #C4862B; padding-top: 3px;
+  }
+  .pub em { font-style: italic; font-family: 'DM Serif Display', serif; }
+  .pub a { color: #1A3D2B; text-decoration: none; font-size: 0.8rem; }
+  .pub a:hover { text-decoration: underline; }
+
+  /* ── Contact ── */
+  .contact-sub { margin-bottom: 2.5rem; }
+  label { display: block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #AAAAAA; margin-bottom: 8px; font-weight: 500; }
+  .fg { margin-bottom: 1.8rem; }
+  input, textarea {
+    width: 100%; background: transparent;
+    border: none; border-bottom: 1px solid #E0E0E0;
+    padding: 8px 0; font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; color: #111111; font-weight: 300;
+    outline: none; transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus { border-bottom-color: #1A3D2B; }
+  textarea { resize: vertical; min-height: 120px; }
+  .fa { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .fs { font-size: 0.85rem; }
+  .fs.ok { color: #2A6A3A; }
+  .fs.err { color: #8A2A2A; }
+
+  footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #EBEBEB; }
+  footer p { font-size: 0.75rem; letter-spacing: 0.06em; }
+
+  @media (max-width: 700px) {
+    .star-bg { width: 300px; opacity: 0.5; }
+    .cv-grid { grid-template-columns: 1fr; }
+    .pub-block { grid-template-columns: 1fr; }
+    .pub-year { writing-mode: horizontal-tb; transform: none; font-size: 0.8rem; padding-top: 0; padding-bottom: 8px; }
+    .pub { grid-template-columns: 1fr; }
+    .pub-type { margin-bottom: 4px; }
+  }
+</style>

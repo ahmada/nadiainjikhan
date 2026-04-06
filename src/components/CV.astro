@@ -1,0 +1,140 @@
+---
+const education = [
+  { degree: 'PhD, [Department]', institution: 'University of Chicago', year: '2024' },
+  { degree: 'MA, [Department]', institution: 'University of Chicago', year: '2019' },
+  { degree: 'BA, [Department]', institution: '[Undergraduate Institution]', year: '2017' },
+];
+
+const positions = [
+  { title: '[Current Position]', institution: '[Institution]', years: '2024–present' },
+  { title: '[Previous Role / Fellowship]', institution: '[Institution]', years: '2022–2024' },
+  { title: '[Teaching Assistant / Instructor]', institution: 'University of Chicago', years: '2019–2022' },
+];
+
+const awards = [
+  { name: '[Fellowship or Award Name]', institution: '[Granting Body]', year: '2023' },
+  { name: '[Fellowship or Award Name]', institution: '[Granting Body]', year: '2021' },
+];
+---
+
+<section id="cv">
+  <div class="container">
+    <p class="section-label">Curriculum Vitae</p>
+
+    <div class="cv-download">
+      <a href="/cv-nadia-inji-khan.pdf" download class="btn">Download CV (PDF)</a>
+    </div>
+
+    <div class="cv-block">
+      <h2>Education</h2>
+      <table>
+        <tbody>
+          {education.map(({ degree, institution, year }) => (
+            <tr>
+              <td class="col-year muted">{year}</td>
+              <td>
+                <span class="entry-title">{degree}</span>
+                <span class="entry-sub muted">{institution}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cv-block">
+      <h2>Positions</h2>
+      <table>
+        <tbody>
+          {positions.map(({ title, institution, years }) => (
+            <tr>
+              <td class="col-year muted">{years}</td>
+              <td>
+                <span class="entry-title">{title}</span>
+                <span class="entry-sub muted">{institution}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cv-block">
+      <h2>Awards &amp; Fellowships</h2>
+      <table>
+        <tbody>
+          {awards.map(({ name, institution, year }) => (
+            <tr>
+              <td class="col-year muted">{year}</td>
+              <td>
+                <span class="entry-title">{name}</span>
+                <span class="entry-sub muted">{institution}</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cv-download {
+    margin-bottom: 3rem;
+  }
+
+  .cv-block {
+    margin-bottom: 3rem;
+  }
+
+  .cv-block h2 {
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  tr {
+    border-top: 1px solid var(--border);
+  }
+
+  td {
+    padding: 12px 0;
+    vertical-align: top;
+  }
+
+  .col-year {
+    width: 100px;
+    font-size: 0.875rem;
+    padding-right: 16px;
+    white-space: nowrap;
+    padding-top: 14px;
+  }
+
+  .entry-title {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.975rem;
+  }
+
+  .entry-sub {
+    display: block;
+    font-size: 0.875rem;
+    margin-top: 2px;
+  }
+
+  @media (max-width: 480px) {
+    .col-year {
+      width: 70px;
+      font-size: 0.8rem;
+    }
+  }
+</style>

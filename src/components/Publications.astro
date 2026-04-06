@@ -1,0 +1,154 @@
+---
+interface Publication {
+  authors: string;
+  title: string;
+  venue: string;
+  year: number;
+  doi?: string;
+  type: 'article' | 'chapter' | 'review';
+}
+
+const publications: Publication[] = [
+  {
+    authors: 'Khan, Nadia Inji',
+    title: '[Article Title: A Study of Something Significant]',
+    venue: '[Journal Name], vol. 00, no. 0',
+    year: 2024,
+    doi: '#',
+    type: 'article',
+  },
+  {
+    authors: 'Khan, Nadia Inji',
+    title: '[Second Article Title: Further Reflections on a Theme]',
+    venue: '[Journal Name], vol. 00, no. 0',
+    year: 2024,
+    doi: '#',
+    type: 'article',
+  },
+  {
+    authors: 'Khan, Nadia Inji',
+    title: '[Chapter Title]',
+    venue: 'In [Edited Volume Title], edited by [Editor Name]. [Publisher]',
+    year: 2023,
+    type: 'chapter',
+  },
+  {
+    authors: 'Khan, Nadia Inji',
+    title: '[Review of Book Title by Author Name]',
+    venue: '[Review Journal], vol. 00, no. 0',
+    year: 2022,
+    doi: '#',
+    type: 'review',
+  },
+  {
+    authors: 'Khan, Nadia Inji',
+    title: '[Earlier Article Title]',
+    venue: '[Journal Name], vol. 00, no. 0',
+    year: 2021,
+    doi: '#',
+    type: 'article',
+  },
+];
+
+// Group by year, most recent first
+const byYear = publications.reduce<Record<number, Publication[]>>((acc, pub) => {
+  if (!acc[pub.year]) acc[pub.year] = [];
+  acc[pub.year].push(pub);
+  return acc;
+}, {});
+
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+---
+
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Publications</p>
+
+    {years.map((year) => (
+      <div class="year-group">
+        <h2 class="year-heading">{year}</h2>
+        <ol>
+          {byYear[year].map((pub) => (
+            <li class="pub-entry">
+              <span class="pub-type">{pub.type}</span>
+              <div class="pub-body">
+                <span class="pub-authors">{pub.authors}.</span>{' '}
+                <span class="pub-title">"{pub.title}."</span>{' '}
+                <span class="pub-venue muted"><em>{pub.venue}</em>.</span>
+                {pub.doi && (
+                  <a class="pub-link" href={pub.doi} target="_blank" rel="noopener">
+                    DOI ↗
+                  </a>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .year-group {
+    margin-bottom: 3rem;
+  }
+
+  .year-heading {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  ol {
+    list-style: none;
+    padding: 0;
+  }
+
+  .pub-entry {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 0 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .pub-type {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+
+  .pub-body {
+    font-size: 0.975rem;
+    line-height: 1.6;
+  }
+
+  .pub-title {
+    font-family: var(--font-serif);
+  }
+
+  .pub-link {
+    margin-left: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .pub-entry {
+      grid-template-columns: 1fr;
+    }
+
+    .pub-type {
+      margin-bottom: 4px;
+    }
+  }
+</style>

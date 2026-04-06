@@ -1,0 +1,117 @@
+---
+// TODO: Replace with your Web3Forms access key from https://web3forms.com
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+---
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2>Get in Touch</h2>
+
+    <p class="contact-intro muted">
+      For research inquiries, media requests, or general correspondence, please use the form below.
+    </p>
+
+    <form id="contact-form" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+      <input type="hidden" name="subject" value="Website inquiry — Nadia Inji Khan" />
+      <input type="hidden" name="redirect" value="false" />
+      <!-- Honeypot -->
+      <input type="checkbox" name="botcheck" style="display:none" />
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn" id="submit-btn">Send Message</button>
+        <span id="form-status" class="form-status" aria-live="polite"></span>
+      </div>
+    </form>
+
+    <footer>
+      <p class="muted">&copy; {new Date().getFullYear()} Nadia Inji Khan</p>
+    </footer>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const status = document.getElementById('form-status') as HTMLSpanElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        form.reset();
+        status.textContent = 'Message sent. Thank you.';
+        status.classList.add('success');
+      } else {
+        throw new Error(data.message);
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.classList.add('error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+  });
+</script>
+
+<style>
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .contact-intro {
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .form-status {
+    font-size: 0.875rem;
+  }
+
+  .form-status.success { color: #5a7a55; }
+  .form-status.error   { color: #8b3a3a; }
+
+  footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer p {
+    font-size: 0.875rem;
+  }
+</style>
